@@ -291,5 +291,37 @@ export const securityPracticesFields = [
         legalBasis: "ENISA TIG §5.1.4 TIPS",
         required: true,
     },
+    {
+        id: "providesSbomForAi",
+        section: "security_practices",
+        type: "boolean",
+        label: {
+            en: "Provide an SBOM-for-AI per G7 minimum elements",
+            de: "Wir stellen ein SBOM-for-AI nach G7-Mindestelementen bereit",
+        },
+        description: {
+            en: "G7 cybersecurity authorities (BSI, ACN, CISA et al.) and the EU Commission published 'Software Bill of Materials (SBOM) for Artificial Intelligence — Minimum Elements' on 12 May 2026. Voluntary baseline reference for AI supply-chain transparency under NIS2 Art. 21(2)(d). Covers seven clusters: metadata, models, dataset properties, infrastructure, security properties, KPIs, system-level properties.",
+            de: "G7-Cybersicherheitsbehörden (BSI, ACN, CISA u. a.) und die EU-Kommission haben am 12. Mai 2026 'Software Bill of Materials (SBOM) for Artificial Intelligence — Minimum Elements' veröffentlicht. Freiwillige Baseline-Referenz für KI-Lieferketten-Transparenz nach NIS2 Art. 21(2)(d). Umfasst sieben Cluster: Metadata, Models, Dataset Properties, Infrastructure, Security Properties, KPIs, System-Level Properties.",
+        },
+        legalBasis: "NIS2 Art. 21(2)(d) / ENISA TIG §5.1.2",
+        required: false,
+        visibleWhen: { field: "usesAiSystems", equals: true },
+    },
+    {
+        id: "aiSbomUrl",
+        section: "security_practices",
+        type: "url",
+        label: {
+            en: "SBOM-for-AI document URL",
+            de: "URL des SBOM-for-AI-Dokuments",
+        },
+        description: {
+            en: "Public or customer-shared URL pointing to the supplier's SBOM-for-AI document.",
+            de: "Öffentliche oder kundenseitig geteilte URL zum SBOM-for-AI-Dokument des Lieferanten.",
+        },
+        legalBasis: "NIS2 Art. 21(2)(d) / ENISA TIG §5.1.2",
+        required: false,
+        visibleWhen: { field: "providesSbomForAi", equals: true },
+    },
 ];
 //# sourceMappingURL=security-practices.js.map

@@ -200,5 +200,20 @@ export const profileFields = [
         legalBasis: "ENISA TIG §5.2(b)",
         required: true,
     },
+    {
+        id: "usesAiSystems",
+        section: "profile",
+        type: "boolean",
+        label: {
+            en: "We use, integrate or provide AI systems",
+            de: "Wir nutzen, integrieren oder bieten KI-Systeme",
+        },
+        description: {
+            en: "Determines whether AI supply-chain disclosure questions appear next. Includes any AI / ML model the customer's data passes through, including third-party LLMs accessed via API.",
+            de: "Bestimmt, ob KI-Lieferketten-Fragen als Nächstes erscheinen. Schließt jedes KI- / ML-Modell ein, durch das Kundendaten laufen — auch fremde LLMs über API.",
+        },
+        legalBasis: "NIS2 Art. 21(2)(d)",
+        required: true,
+    },
 ];
 //# sourceMappingURL=profile.js.map

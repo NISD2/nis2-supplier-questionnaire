@@ -15,7 +15,7 @@ The reference implementation is the supplier portal at [nisd2.eu](https://nisd2.
 
 ## What's in it
 
-- **56 fields** across 6 sections (`profile`, `security_practices`, `saas_technical`, `on_prem_technical`, `pro_services`, `managed_services`)
+- **59 fields** across 6 sections (`profile`, `security_practices`, `saas_technical`, `on_prem_technical`, `pro_services`, `managed_services`)
 - Each field anchored to an **EU-level** primary source: NIS2 Art. 21(2), CIR 2024/2690, ENISA Technical Implementation Guidance v1.0, GDPR Art. 28, or the Cyber Resilience Act
 - Two locales: English and German
 - Published as a Zod schema (TypeScript), a JSON artefact, and a JSON Schema for non-TS consumers
@@ -36,7 +36,7 @@ National-derivative frameworks (BSI IT-Grundschutz / Lieferketten-Checkliste in 
 This package is **not on the npm registry** — install directly from GitHub.
 
 ```bash
-bun add github:NISD2/nis2-supply-chain-questionnaire-schema#v3.0.2
+bun add github:NISD2/nis2-supply-chain-questionnaire-schema#v3.1.0
 # npm, pnpm, yarn — same syntax
 ```
 

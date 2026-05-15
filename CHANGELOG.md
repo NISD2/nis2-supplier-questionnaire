@@ -4,6 +4,19 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [3.1.0] — 2026-05-15
+
+### Added
+- **AI supply-chain disclosure block.** Three new fields covering the G7 / BSI / ACN / CISA "Software Bill of Materials (SBOM) for Artificial Intelligence — Minimum Elements" guideline published on 12 May 2026:
+  - `profile.usesAiSystems` (boolean, required) — gates the AI block. Includes any AI / ML model the customer's data passes through, including third-party LLMs accessed via API.
+  - `security_practices.providesSbomForAi` (boolean, optional, visible when `usesAiSystems = true`) — supplier states whether they publish an SBOM-for-AI per the G7 minimum elements.
+  - `security_practices.aiSbomUrl` (url, optional, visible when `providesSbomForAi = true`) — public or customer-shared URL to the document.
+- Legal basis anchored to **NIS2 Art. 21(2)(d) / ENISA TIG §5.1.2**. The G7 SBOM-for-AI guideline is referenced in the description as the recognised voluntary baseline, not as the legal authority — the underlying duty is supply-chain risk management; the G7 document operationalises one credible disclosure format.
+
+### Migration
+- Backward compatible. Existing supplier responses remain valid; new fields default to `null` until a supplier answers them. The `usesAiSystems` gate hides the entire AI block from suppliers that don't use AI.
+- Consumers do not need to change anything. The visible-fields helper automatically skips the new conditional block based on the response state.
+
 ## [3.0.1] — 2026-04-28
 
 ### Changed

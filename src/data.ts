@@ -13,8 +13,8 @@ import { allFields } from "./fields";
  * Bump these constants when shipping a release; CI will fail if the
  * generated JSON falls out of sync.
  */
-export const VERSION = "3.0.2";
-export const LAST_UPDATED = "2026-04-28";
+export const VERSION = "3.1.0";
+export const LAST_UPDATED = "2026-05-15";
 
 export const supplierQuestionnaire: SupplierQuestionnaire =
   supplierQuestionnaireSchema.parse({
